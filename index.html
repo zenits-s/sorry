@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Will You Go Out With Me?</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #ff9a9e, #fad0c4);
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      margin-top: 50px;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    img {
+      width: 250px;
+      border-radius: 15px;
+      margin: 20px 0;
+    }
+
+    /* FIXED BUTTON LAYOUT */
+    .buttons {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 50px; /* more space between buttons */
+      margin-top: 20px;
+    }
+
+    button {
+      padding: 12px 24px;
+      font-size: 18px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    #yesBtn {
+      background-color: #28a745;
+      color: white;
+      transform-origin: center;
+    }
+
+    #noBtn {
+      background-color: #dc3545;
+      color: white;
+    }
+
+    #message {
+      margin-top: 20px;
+      font-size: 22px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <h1> Yar Sorry. please maaf kar do .. Anshika ji..</h1>
+
+    <!-- Cute requesting cat -->
+    <img src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" alt="Cute Cat">
+
+    <div class="buttons">
+      <button id="yesBtn">Yes 💖</button>
+      <button id="noBtn">No 😢</button>
+    </div>
+
+    <div id="message"></div>
+  </div>
+
+  <script>
+    let yesSize = 1;
+
+    const yesBtn = document.getElementById("yesBtn");
+    const noBtn = document.getElementById("noBtn");
+    const message = document.getElementById("message");
+
+    // YES → go to next page
+    yesBtn.addEventListener("click", () => {
+      window.location.href = "yes.html";
+    });
+
+    // NO → increase YES size
+    noBtn.addEventListener("click", () => {
+      yesSize += 0.4; // controlled growth
+      yesBtn.style.transform = `scale(${yesSize})`;
+      message.innerHTML = "Please maan jao na 😭👉👈";
+    });
+  </script>
+
+</body>
+</html>
